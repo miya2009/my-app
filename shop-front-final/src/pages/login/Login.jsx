@@ -16,15 +16,14 @@ const Login=()=>{
 
 	const currentUser = useSelector((state) => state.user);
 	const navigate = useNavigate();
+  	const dispatch = useDispatch();
 
-  const dispatch = useDispatch();
+	useEffect(() => {
+			if (currentUser?.id) navigate('/profile');
+			// eslint-disable-next-line react-hooks/exhaustive-deps
+		}, []);
 
-  useEffect(() => {
-		if (currentUser?.id) navigate('/profile');
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-  const handleChange = (e) => {
+  	const handleChange = (e) => {
 		const { name, value } = e.target;
 		console.log(name, value);
 		setUser((prevState) => {

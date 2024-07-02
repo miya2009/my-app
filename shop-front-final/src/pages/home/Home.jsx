@@ -46,24 +46,21 @@ const Home=()=>{
 
   return(
     <div className='mt-3'>
-			{errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}
-
+		{errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}
 			{infoMessage && <div className='alert alert-success'>{infoMessage}</div>}
-
 			<div className='d-flex justify-content-around flex-wrap gap-3'>
 				{productList.map((item, ind) => (
 					<div key={item.id} className='card home-card'>
 						<div className='card-body'>
 							<div className='card-title text-uppercase'>{item.name}</div>
 							<div className='card-subtitle text-muted'>{item.description}</div>
-              <div className='card-subtitle text-muted'>{`${item.price}원`}</div>
+              				<div className='card-subtitle text-muted'>{`${item.price}원`}</div>
 						</div>
 						<FontAwesomeIcon icon={faCartPlus} className='ms-auto me-auto product-icon' />
-
 						<div className='row mt-2 p-3'>
-              <div className='col-6'>
-                수량 : <input type="text" name="quantity" onChange={handleChange}/>
-              </div>
+              				<div className='col-6'>
+                				수량 : <input type="text" name="quantity" onChange={handleChange}/>
+              				</div>
 							<div className='col-6'>
 								<button className='btn btn-outline-success w-100' onClick={() => purchase(item)}>
 									구매

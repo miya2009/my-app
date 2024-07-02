@@ -2,9 +2,7 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 import { Modal } from "react-bootstrap";
 
 const ProductDelete=forwardRef((props, ref)=>{
-
     const [show, setShow] = useState(false);
-
 	useImperativeHandle(ref, () => ({
 		showDeleteModal() {
 			setShow(true);

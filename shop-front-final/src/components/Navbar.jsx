@@ -3,9 +3,9 @@ import logo from '../logo.svg';
 import {NavLink, useNavigate} from 'react-router-dom'
 import { Role } from '../models/Role';
 import { clearCurrentUser } from '../store/actions/user';
+
 const Navbar = () => {
 	const currentUser = useSelector((state) => state.user);
-
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
